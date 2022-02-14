@@ -1,5 +1,11 @@
 replicaCount: 2
 
+mariadb:
+  auth:
+    database: metastore_db
+    username: admin
+    password: admin
+
 image:
   registry: localhost:32000/
   repo: hive-metastore
