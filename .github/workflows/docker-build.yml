@@ -30,7 +30,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-#          context: .
+          context: ./charts/hive-metastore/Dockerfiles/
           file: ./charts/hive-metastore/Dockerfiles/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/hive-metastore:latest
