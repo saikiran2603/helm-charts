@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hive-metastore
+  labels:
+    app: hive-metastore
+    component: metastore
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: hive-metastore
+      component: metastore
+  template:
+    metadata:
+      labels:
+        app: hive-metastore
+        component: metastore
+    spec:
+      volumes:
+        - name: vol-cfg-metastore
+          configMap:
+            name: cfg-metastore
+      containers:
+        - name: hive-metastore
+          image:  localhost:32000/hive-metastore:latest
+          ports:
+            - name: thrift
+              containerPort: 9083
+          volumeMounts:
+            - name: vol-cfg-metastore
+              mountPath: /opt/hive-metastore/conf/metastore-site.xml
+              subPath: metastore-site.xml
+          readinessProbe:
+            tcpSocket:
+              port: thrift
+            initialDelaySeconds: 60
+            periodSeconds: 20
+            timeoutSeconds: 15
+          livenessProbe:
+            tcpSocket:
+              port: thrift
+            initialDelaySeconds: 90
+            periodSeconds: 30
+            timeoutSeconds: 15

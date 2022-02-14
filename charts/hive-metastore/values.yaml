@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  registry: localhost:32000/
+  repo: hive-metastore
+  tag: lastest
+
+service:
+  type: ClusterIP
+  port: 9083
+  nodePort: ""
+
+s3:
+  endpoint: http://10.152.183.201:80
+  accessKey: minio
+  secretKey: minio123
+  warehouseBucket: test-trino
+
+mysql:
+  jdbcUrl: jdbc:mysql://mariadb:3306
+  user: admin
+  password: admin
+  dbName: metastore_db
