@@ -1,6 +1,7 @@
 replicaCount: 2
 
 mariadb:
+  fullnameOverride: mariadb
   auth:
     database: metastore_db
     username: admin
