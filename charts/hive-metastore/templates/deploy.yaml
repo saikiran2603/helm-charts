@@ -23,7 +23,7 @@ spec:
             name: cfg-metastore
       containers:
         - name: hive-metastore
-          image:  localhost:32000/hive-metastore:latest
+          image: neo2603/hive-metastore:latest
           ports:
             - name: thrift
               containerPort: 9083
