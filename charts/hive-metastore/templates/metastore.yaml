@@ -20,7 +20,7 @@ data:
         </property>
         <property>
             <name>javax.jdo.option.ConnectionURL</name>
-            <value>{{ .Values.mysql.jdbcUrl }}/{{ .Values.mysql.dbName }}?createDatabaseIfNotExist=true</value>
+            <value>{{ .Values.mysql.jdbcUrl }}/{{ .Values.mysql.dbName }}</value>
         </property>
         <property>
             <name>javax.jdo.option.ConnectionDriverName</name>
