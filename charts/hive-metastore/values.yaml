@@ -27,7 +27,7 @@ s3:
   warehouseBucket: test-trino
 
 mysql:
-  jdbcUrl: jdbc:mysql://mariadb:3306
+  jdbcUrl: jdbc:mysql://mariadb-primary.default.svc.cluster.local:3306
   user: admin
   password: admin
   dbName: metastore_db
