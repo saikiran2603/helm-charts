@@ -4,11 +4,11 @@ description: Hive standalone metastore
 
 type: application
 
-version: 0.1.11
+version: 0.2.0
 
 appVersion: 3.0.0
 
-dependencies:
-- name: mariadb
-  version: "*"
-  repository: https://charts.bitnami.com/bitnami
+# dependencies:
+# - name: mariadb
+#   version: "*"
+#   repository: https://charts.bitnami.com/bitnami
