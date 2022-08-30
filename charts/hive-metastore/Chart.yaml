@@ -12,3 +12,6 @@ dependencies:
 - name: mariadb
   version: "*"
   repository: https://charts.bitnami.com/bitnami
+  architecture: standalone
+  secondary:
+    replicaCount: 4
