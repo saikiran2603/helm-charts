@@ -4,7 +4,7 @@ description: Hive standalone metastore
 
 type: application
 
-version: 0.1.5
+version: 0.1.6
 
 appVersion: 3.0.0
 
@@ -12,6 +12,3 @@ dependencies:
 - name: mariadb
   version: "*"
   repository: https://charts.bitnami.com/bitnami
-  architecture: standalone
-  secondary:
-    replicaCount: 2
