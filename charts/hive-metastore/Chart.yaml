@@ -14,4 +14,4 @@ dependencies:
   repository: https://charts.bitnami.com/bitnami
   architecture: standalone
   secondary:
-    replicaCount: 4
+    replicaCount: 2
