@@ -6,6 +6,9 @@ mariadb:
     database: metastore_db
     username: admin
     password: admin
+  architecture: standalone
+  secondary:
+    replicaCount: 3
 
 image:
   registry: localhost:32000/
