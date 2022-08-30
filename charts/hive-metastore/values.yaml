@@ -1,4 +1,4 @@
-replicaCount: 4
+replicaCount: 2
 
 mariadb:
   fullnameOverride: mariadb
