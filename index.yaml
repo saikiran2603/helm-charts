@@ -3,6 +3,20 @@ entries:
   hive-metastore:
   - apiVersion: v2
     appVersion: 3.0.0
+    created: "2022-08-30T10:14:04.107205821Z"
+    dependencies:
+    - name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: '*'
+    description: Hive standalone metastore
+    digest: 26a77c809f014a5dfbbffb2674ac2ab2ac3bdce6cad946b1b1085ac77fe6f753
+    name: hive-metastore
+    type: application
+    urls:
+    - https://github.com/saikiran2603/helm-charts/releases/download/hive-metastore-0.1.11/hive-metastore-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
+    appVersion: 3.0.0
     created: "2022-08-30T08:41:33.576551105Z"
     dependencies:
     - name: mariadb
