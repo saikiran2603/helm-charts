@@ -11,12 +11,14 @@ Once Helm has been set up correctly, add the repo as follows:
 
 1. Install mariadb as the metastore database 
 
-    helm install mariadb-release bitnami/mariadb --set fullnameOverride=mariadb --set auth.database=metastore_db --set auth.username=admin --set auth.password=admin --set architecture=replication --set secondary.replicaCount=3 -n hai-trino --create-namespace --wait
+
+        helm install mariadb-release bitnami/mariadb --set fullnameOverride=mariadb --set auth.database=metastore_db --set auth.username=admin --set auth.password=admin --set architecture=replication --set secondary.replicaCount=3 -n hai-trino --create-namespace --wait
 
 
 2. Install the hive metastore chart 
 
-    helm repo add saikiran2603 https://saikiran2603.github.io/helm-charts
+
+        helm repo add saikiran2603 https://saikiran2603.github.io/helm-charts
 
 If you had already added this repo earlier, run `helm repo update` to retrieve
 the latest versions of the packages.  You can then run `helm search repo
