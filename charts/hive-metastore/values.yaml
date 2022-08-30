@@ -1,14 +1,14 @@
 replicaCount: 4
 
-# mariadb:
-#   fullnameOverride: mariadb
-#   auth:
-#     database: metastore_db
-#     username: admin
-#     password: admin
-#   architecture: replication
-#   secondary:
-#     replicaCount: 3
+mariadb:
+  fullnameOverride: mariadb
+  auth:
+    database: metastore_db
+    username: admin
+    password: admin
+  architecture: replication
+  secondary:
+    replicaCount: 3
 
 image:
   registry: localhost:32000/
