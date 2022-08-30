@@ -21,7 +21,7 @@ service:
   nodePort: ""
 
 s3:
-  endpoint: http://10.152.183.201:80
+  endpoint: http://localhost:80
   accessKey: minio
   secretKey: minio123
   warehouseBucket: test-trino
