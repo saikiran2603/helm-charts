@@ -6,7 +6,7 @@ mariadb:
     database: metastore_db
     username: admin
     password: admin
-  architecture: standalone
+  architecture: replication
   secondary:
     replicaCount: 3
 
