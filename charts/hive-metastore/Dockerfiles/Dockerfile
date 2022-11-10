@@ -22,11 +22,11 @@ RUN set -ex \
     && curl -L https://dev.mysql.com/get/Downloads/Connector-J/${RDB_CONN}.tar.gz \
         | tar -zxv --strip-components 1 -C ${HIVE_HOME}/lib/ -f - ${RDB_CONN}/${RDB_CONN}.jar \
 ## remove doc
-    && rm -rf ${HADOOP_HOME}/share/doc \
+    && rm -rf ${HADOOP_HOME}/share/doc
 ## remove unnecessary files
-    && cd ${HADOOP_HOME}/share/hadoop \
-    && rm -rf ${UNNECESSARY} \
-    && mkdir ${UNNECESSARY}
+#     && cd ${HADOOP_HOME}/share/hadoop \
+#     && rm -rf ${UNNECESSARY} \
+#     && mkdir ${UNNECESSARY}
 
 COPY entrypoint.sh .
 
