@@ -20,7 +20,7 @@ data:
         </property>
         <property>
             <name>javax.jdo.option.ConnectionURL</name>
-            <value>{{ .Values.mysql.jdbcUrl }}/{{ .Values.mysql.dbName }}</value>
+            <value>{{ .Values.hiveMetastore.mysql.jdbcUrl }}/{{ .Values.mysql.dbName }}</value>
         </property>
         <property>
             <name>javax.jdo.option.ConnectionDriverName</name>
@@ -28,11 +28,11 @@ data:
         </property>
         <property>
             <name>javax.jdo.option.ConnectionUserName</name>
-            <value>{{ .Values.mysql.user }}</value>
+            <value>{{ .Values.hiveMetastore.mysql.user }}</value>
         </property>
         <property>
             <name>javax.jdo.option.ConnectionPassword</name>
-            <value>{{ .Values.mysql.password }}</value>
+            <value>{{ .Values.hiveMetastore.mysql.password }}</value>
         </property>
         <property>
             <name>fs.s3a.path.style.access</name>
@@ -44,19 +44,19 @@ data:
         </property>
             <property>
             <name>metastore.warehouse.dir</name>
-            <value>s3a://{{ .Values.s3.warehouseBucket }}/warehouse/</value>
+            <value>s3a://{{ .Values.hiveMetastore.s3.warehouseBucket }}/warehouse/</value>
         </property>
         <property>
             <name>fs.s3a.endpoint</name>
-            <value>{{ .Values.s3.endpoint }}</value>
+            <value>{{ .Values.hiveMetastore.s3.endpoint }}</value>
         </property>
         <property>
             <name>fs.s3a.access.key</name>
-            <value>{{ .Values.s3.accessKey }}</value>
+            <value>{{ .Values.hiveMetastore.s3.accessKey }}</value>
         </property>
         <property>
             <name>fs.s3a.secret.key</name>
-            <value>{{ .Values.s3.secretKey }}</value>
+            <value>{{ .Values.hiveMetastore.s3.secretKey }}</value>
         </property>
     </configuration>
 

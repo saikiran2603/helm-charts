@@ -9,12 +9,12 @@ spec:
   selector:
     app: hive-metastore
     component: metastore
-  type: {{ .Values.service.type }}
+  type: {{ .Values.hiveMetastore.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.hiveMetastore.service.port }}
       targetPort: 9083
-{{- if eq .Values.service.type "NodePort" }}
-      nodePort: {{ .Values.service.nodePort }}
+{{- if eq .Values.hiveMetastore.service.type "NodePort" }}
+      nodePort: {{ .Values.hiveMetastore.service.nodePort }}
   type: NodePort
 {{ else }}
   type: ClusterIP

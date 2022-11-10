@@ -10,24 +10,22 @@ mariadb:
   secondary:
     replicaCount: 3
 
-image:
-  registry: localhost:32000/
-  repo: hive-metastore
-  tag: lastest
-
-service:
-  type: ClusterIP
-  port: 9083
-  nodePort: ""
-
-s3:
-  endpoint: http://localhost:80
-  accessKey: minio
-  secretKey: minio123
-  warehouseBucket: test-trino
-
-mysql:
-  jdbcUrl: jdbc:mysql://mariadb-primary:3306
-  user: admin
-  password: admin
-  dbName: metastore_db
+hiveMetastore:
+  image:
+    registry: neo2603
+    image_name: hive-metastore
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 9083
+    nodePort: ""
+  s3:
+    endpoint: http://localhost:80
+    accessKey: minio
+    secretKey: minio123
+    warehouseBucket: test-trino
+  mysql:
+    jdbcUrl: jdbc:mysql://mariadb-primary:3306
+    user: admin
+    password: admin
+    dbName: metastore_db
