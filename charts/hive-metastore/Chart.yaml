@@ -4,7 +4,7 @@ description: Hive standalone metastore
 
 type: application
 
-version: 0.2.1
+version: 0.3.0
 
 appVersion: 3.0.0
 
