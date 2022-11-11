@@ -22,6 +22,7 @@ jobs:
       - name: Run helm-docs
         run: .github/helm-docs.sh
 
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.1.0
         env:
