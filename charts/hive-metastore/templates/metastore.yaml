@@ -20,7 +20,7 @@ data:
         </property>
         <property>
             <name>javax.jdo.option.ConnectionURL</name>
-            <value>{{ .Values.hiveMetastore.mysql.jdbcUrl }}/{{ .Values.mysql.dbName }}</value>
+            <value>{{ .Values.hiveMetastore.mysql.jdbcUrl }}/{{ .Values.hiveMetastore.mysql.dbName }}</value>
         </property>
         <property>
             <name>javax.jdo.option.ConnectionDriverName</name>
