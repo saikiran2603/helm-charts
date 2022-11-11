@@ -10,6 +10,7 @@ mariadb:
   secondary:
     replicaCount: 3
 
+
 hiveMetastore:
   image:
     registry: neo2603
