@@ -23,7 +23,7 @@ spec:
             name: cfg-metastore
       containers:
         - name: hive-metastore
-          image: neo2603/hive-metastore:latest
+          image: "{{ .Values.hiveMetastore.image.registry }}/{{ .Values.hiveMetastore.image.image_name }}:{{ .Values.hiveMetastore.image.tag }}"
           ports:
             - name: thrift
               containerPort: 9083
