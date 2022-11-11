@@ -1,12 +1,7 @@
-name: ci
+name: Build Docker Images
 
 on:
-#   push:
-#     branches:
-#       - 'main'
-#     tags:
-#       - 'v*'
-  pull_request:
+  push:
     branches:
       - 'main'
 
