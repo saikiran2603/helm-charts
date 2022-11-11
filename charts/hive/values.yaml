@@ -1,0 +1,39 @@
+# The base hadoop image to use for all components.
+# See this repo for image build details: https://github.com/Comcast/kube-yarn/tree/master/image
+
+
+image:
+  repository: localhost:32000/hive
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources: {}
+
+# Also deploy an internal postgresql hive-metastore requirement
+metastore:
+  enabled: true
+postgresql:
+  postgresqlUsername: hive
+  postgresqlPassword: hive
+  postgresqlDatabase: metastore
+  initdbScriptsConfigMap: hive-metastore-postgresql-init
+#####################################################
+# Also deploy hdfs requirement
+hdfs:
+  enabled: true
+
+conf:
+  logLevel: INFO
+  hiveSite:
+    # if not set, default hive.metastore.uris is default uri from metastore requirement:
+    # "thrift://{{.Release.Name}}-metastore:9083"
+    hive.metastore.uris: "thrift://hive-metastore.hai-trino:9083"
+  hdfsAdminUser: hdfs
+  # if not set, default is configMap from hdfs requirement {{.Release.Name}}-hdfs-hadoop
+#  hadoopConfigMap:
+  # to manually provide hadoop config attributes instead of hadoopConfigMap.
+  hadoopSite:
+    coreSite:
+      fs.defaultFS: hdfs://hdfs-cluster:8020
+  #   hdfsSite:
+  #   ...

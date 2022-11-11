@@ -38,8 +38,8 @@ ENV HADOOP_HOME=/opt/hadoop \
 ENV PATH=$HIVE_HOME/bin:$HADOOP_HOME/bin:$PATH
 
 COPY scripts/docker-entrypoint.sh /
-COPY conf $HIVE_HOME/conf
+# COPY conf $HIVE_HOME/conf
 RUN chmod +x /docker-entrypoint.sh
 
 EXPOSE 10000 10002
-ENTRYPOINT ["sh", "-c", "/docker-entrypoint.sh"]
+# ENTRYPOINT ["sh", "-c", "/docker-entrypoint.sh"]
